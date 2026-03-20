@@ -5,6 +5,8 @@ class Character extends GameEntity {
         this.velY = 0;
         this.accY = 0;
 
+        this.collider = new Rectangle(ColliderType.DYNAMIC, 50, 60);
+
         this.controller = new Controller();
         this.moveSpeed = 5;
         this.jumpSpeed = 10;

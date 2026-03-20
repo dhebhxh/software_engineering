@@ -1,77 +1,74 @@
-class CollideSystem {
-    constructor() {
-        this.objects = [];
+class CollisionSystem {
+    constructor(objects) {
+        this.objects = objects;
+        this.detector = new CollisionDetector();
+        this.resolver = new CollisionResolver();
+        this.responder = new CollisionResponder();
+    
+        this.detectionFilter;
+        this.initialiseDetectionFilter();
+        this.resolvationFilter;
+        this.initialiseResolvationFilter();
     }
-
+    collisionEntry() {
+        for(let i = 0; i < this.objects.length; i++) {
+            for(let j = i + 1; j < this.objects.length; j++) {
+                this.processPair(this.objects[i], this.objects[j]);
+            }
+        }
+    }
     setObjects(objects) {
         this.objects = objects;
     }
-
-    collisionDetection() {
-        for(int i = 0; i < this.objects.length; i++) {
-            if(shouldDetection(object1, object2))
-        }
-    }
-
-    get
-
-    resolvePositionOne(object1, object2) {
+    processPair(objA, objB) {
+        const typeA = objA.collider.colliderType;
+        const typeB = objB.collider.colliderType;
         
-    }
-    
-    resolvePositionBoth(object1, object2) {
+        const shapeA = objA.collider.colliderShape;
+        const shapeB = objB.collider.colliderShape;
 
-    }
-    collideTestRectRect(r1, r2) {
-        let result = false;
-        
-        let vx = r1.getCenterX() - r2.getCenterX();
-        let vy = r1.getCenterY() - r2.getCenterY();
+        if(this.detectionFilter.get(typeA|typeB)) {
+            //第一步：碰撞检测
+            const detectFunc = this.detector.get(shapeA|shapeB);
+            const detectResult = detectFunc(objA, objB);
 
-        let combinedHalfWidths = r1.getHalfWidth() + r2.getHalfWidth();
-        let combinedHalfHeights = r1.getHalfHeight() + r2.getHalfHeight();
+            if(detectResult) {//如果发生碰撞，执行if语句，如果没有则跳过
+                let collisionMsg;
 
-        if(Math.abs(vx) < combinedHalfWidths && Math.abs(vy) < combinedHalfHeights) {
-            result = true;
-        }
-    
-        
-        return result;
-    }
-
-    correctPosition(r1, r2) {
-        let collisionSide = "";
-        if(this.collideTestRectRect(r1, r2)) {
-            
-            let vx = r1.getCenterX() - r2.getCenterX();
-            let vy = r1.getCenterY() - r2.getCenterY();
-
-            let combinedHalfWidths = r1.getHalfWidth() + r2.getHalfWidth();
-            let combinedHalfHeights = r1.getHalfHeight() + r2.getHalfHeight();
-
-            //collision happened
-            let overlapX = combinedHalfWidths - Math.abs(vx);
-            let overlapY = combinedHalfHeights - Math.abs(vy);
-
-            if(overlapX < overlapY) {
-                if(vx > 0) {
-                    collisionSide = "left";
-                    r1.x = r1.x + overlapX;
-                } else {
-                    collisionSide = "right";
-                    r1.x = r1.x - overlapX;
+                //第二步：碰撞修复
+                if(this.resolvationFilter.get(typeA|typeB)){ //不需要修复的类型跳过，需要修复的执行if语句
+                    const resolveFunc = this.resolver.get(typeA|typeB);
+                    collisionMsg = resolveFunc(objA, objB);
                 }
-            } else {
-                if(vy > 0) {
-                    collisionSide = "bottom"
-                    r1.y = r1.y + overlapY;
-                } else {
-                    collisionSide = "top"
-                    r1.y = r1.y - overlapY;
-                }
+
+                //第三步：碰撞响应
+                const responseFunc = this.responder.get(objA, objB);
+                responseFunc(objA, objB, collisionMsg);
             }
         }
-        return collisionSide;
     }
-    
+    initialiseDetectionFilter() {
+        this.detectionFilter = new Map();
+        this.detectionFilter.set(ColliderType.DYNAMIC|ColliderType.DYNAMIC, true);
+        this.detectionFilter.set(ColliderType.DYNAMIC|ColliderType.STATIC, true);
+        this.detectionFilter.set(ColliderType.DYNAMIC|ColliderType.TRIGGER, true);
+
+        this.detectionFilter.set(ColliderType.STATIC|ColliderType.DYNAMIC, true);
+        this.detectionFilter.set(ColliderType.STATIC|ColliderType.STATIC, false);
+        this.detectionFilter.set(ColliderType.STATIC|ColliderType.TRIGGER, false);
+        
+        this.detectionFilter.set(ColliderType.TRIGGER|ColliderType.DYNAMIC, true);
+        this.detectionFilter.set(ColliderType.TRIGGER|ColliderType.STATIC, false);
+        this.detectionFilter.set(ColliderType.TRIGGER|ColliderType.TRIGGER, false);
+    }
+    initialiseResolvationFilter() {
+        this.resolvationFilter = new Map();
+        this.resolvationFilter.set(ColliderType.DYNAMIC|ColliderType.DYNAMIC, true);
+        this.resolvationFilter.set(ColliderType.DYNAMIC|ColliderType.STATIC, true);
+        this.resolvationFilter.set(ColliderType.DYNAMIC|ColliderType.TRIGGER, false);
+
+        this.resolvationFilter.set(ColliderType.STATIC|ColliderType.DYNAMIC, true);
+        this.resolvationFilter.set(ColliderType.TRIGGER|ColliderType.DYNAMIC, false);
+    }
+
 }
