@@ -37,7 +37,24 @@ function dynDynBlockResponse(a, b, msg) {
     return;
 }
 function dynTriResponse(a, b) {
+    //level1
     if(a.type === "player" && b.type === "home") {
-        eventBus.publish("autoResult", "autoResult");
+        eventBus.publish("autoResult", "autoResult1");
+        return;
+    }
+    //level2
+    if((a.type === "player" || a.type === "replayer") && b.type === "button") {
+        b.pressButton();
+        return;
+    }
+    if(a.type === "player" && b.type === "spike") {
+        eventBus.publish("autoResult", "autoResult2");
+        return;
+    }
+    if(a.type === "player" && b.type === "portal") {
+        if(b.isOpen) {
+            eventBus.publish("autoResult", "autoResult2");
+        }
+        return;
     }
 }

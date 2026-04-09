@@ -1,4 +1,5 @@
-import { Level1, Level2 } from "./Level.js";
+import { Level1 } from "./Level1.js";
+import { Level2 } from "./Level2.js";
 
 export class LevelManager {
     constructor() {
@@ -12,12 +13,14 @@ export class LevelManager {
         if(!this.level) {
             const LevelClass = this.levelMap[levelIndex];
             this.level = new LevelClass();
+            console.log("load level: " + levelIndex);
         }
     }
     unloadLevel() {
         if(this.level) {
             this.level.clearLevel();
             this.level = null;
+            console.log("unload level");
         }
         
     }
@@ -25,9 +28,11 @@ export class LevelManager {
         if(this.level) {
             this.flipY();// every frame flip y axis
             this.level.clearCanvas();
-            this.level.draw();
             this.level.updatePhysics();
             this.level.updateCollision();
+            if(this.level) {
+                this.level.draw();
+            }
         }
     }
     flipY() {

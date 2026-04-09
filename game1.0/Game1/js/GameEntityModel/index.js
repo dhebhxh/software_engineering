@@ -3,4 +3,6 @@ export { Replayer } from "./Replayer.js";
 export { Ground } from "./Ground.js";
 export { Wall } from "./Wall.js";
 export { Home } from "./Home.js";
-export { Cliff } from "./Cliff.js";
+export { Spike } from "./Spike.js";
+export { Portal } from "./Portal.js";
+export { Button } from "./Button.js";

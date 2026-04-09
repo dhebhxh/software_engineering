@@ -77,17 +77,24 @@ export class UIManager {//改成pages
     }
 
     transition(input) {
+        console.log("input: " + input);
         const nextState = this.states[this.state][input];
         if(nextState !== undefined) {
-            this.renderState(nextState);
+            
             if(nextState === "level1" || nextState === "level2") {
+                this.renderState(nextState);
                 eventBus.publish("loadLevel", nextState);
-            }
-            if(input === "level1-btn-back" || input === "level2-btn-back") {
+            } else if(input === "level1-btn-back" || input === "level2-btn-back") {
                 eventBus.publish("unloadLevel");
-            }
-            if(input === "autoResult") {
+                this.renderState(nextState);
+            } else if(input === "autoResult1") {
                 eventBus.publish("unloadLevel");
+                this.renderState(nextState);
+            } else if(input === "autoResult2") {
+                eventBus.publish("unloadLevel");
+                this.renderState(nextState);
+            } else {
+                this.renderState(nextState);
             }
             this.state = nextState;
         }

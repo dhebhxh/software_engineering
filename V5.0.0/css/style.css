@@ -1,0 +1,63 @@
+/* 全局重置，确保 canvas 和 DOM 元素正确叠放 */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* 防止滚动条出现 */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* p5.js 创建的 canvas 默认是块级元素，我们让它填满视口 */
+canvas {
+    display: block;
+    /* canvas 默认 z-index 为 0，按钮默认会出现在 canvas 上方，因为它们是后来添加的 DOM 元素 */
+}
+
+/* 所有按钮的基础样式 */
+.my-button {
+    position: absolute;          /* 让 p5 的 .position() 生效 */
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    transition: background-color 0.3s;
+    /* 保证按钮在 canvas 上方 */
+    z-index: 10;
+}
+
+.my-button:hover {
+    background-color: #45a049;
+}
+
+/* 禁用状态的按钮 */
+.my-button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* 返回按钮特定样式 */
+.back-button {
+    background-color: #f44336;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background-color: #d32f2f;
+}
+
+/* 主菜单开始按钮样式 */
+.play-button {
+    background-color: #008CBA;
+    font-size: 24px;
+    padding: 12px 28px;
+}
+
+.play-button:hover {
+    background-color: #0073a1;
+}
