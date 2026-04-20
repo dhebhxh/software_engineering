@@ -1,10 +1,9 @@
-<h1 align="center">🎮️ U Help U</h1>
+<h1 align="center">🎮️ U Help U 🎮️</h1>
 
 <p align="center">
 Two selves. One timeline.<br>
 Record. Replay. Cooperate. Escape.
 </p>
-
 
 <a href="https://uob-comsm0166.github.io/2026-group-13/Demo1">
   <figure style="text-align:center;">
@@ -13,59 +12,75 @@ Record. Replay. Cooperate. Escape.
   </figure>
 </a>
 
-
 <h1 align="center">📽️ Gameplay Preview</h1>
+
+<br>
+<br>
+<br>
 
 <h1 align="center">👥 Team Members</h1>
 
-
-<figure style="text-align:center;">
-  <img src="./DevLog/Week01/img/Group_Picture01.jpg"
-       style="border:6px solid #C1A4DC; border-radius:20px;">
-  <figcaption>Figure X: 描述文字</figcaption>
+<figure style="text-align: center;">
+  <img src="./DevLog/Week01/img/Group_Picture01.jpg" alt="diagram" width="600">
+  <figcaption></figcaption>
 </figure>
 
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+  </tr>
+  <tr>
+    <td>Zhiqing Zhang</td>
+    <td>ek25873@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+  <tr>
+    <td>Siqi Xu</td>
+    <td>lv25773@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+  <tr>
+    <td>Xuelin Ma</td>
+    <td>pw25500@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+  <tr>
+    <td>Yiyuan Yao</td>
+    <td>jg25755@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+  <tr>
+    <td>Jingran Zhang</td>
+    <td>sx25997@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+  <tr>
+    <td>Wenlei Miao</td>
+    <td>hz25681@bristol.ac.uk</td>
+    <td>role</td>
+  </tr>
+</table>
 
-- Group member 1, Zhiqing Zhang, ek25873@bristol.ac.uk, role
-- Group member 2, Siqi Xu, lv25773@bristol.ac.uk, role
-- Group member 3, Xuelin Ma, pw25500@bristol.ac.uk, role
-- Group member 4, Yiyuan Yao, jg25755@bristol.ac.uk, role
-- Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
-- Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
-
-<details>
-  <summary>🌙 靖然 · Jingrán — 视觉 / 交互</summary>
-
-最开始不知道如何把动物融进游戏这样呈现，改了很多版本。  
-看别的动物展示都很有触感。  
-这次项目让我学到了如何在技术限制下保持视觉美感，  
-也是逻辑和开发同样为视觉服务的重要性。
-
-</details>
-
----
-
-<details>
-  <summary>⚙️ 颖 — 系统设计</summary>
-
-（这里写颖的项目感想……）
-
-</details>
-
----
-
-<details>
-  <summary>🛠️ 鹏坤 — 开发 / 逻辑</summary>
-
-（这里写鹏坤的项目感想……）
-
-</details>
-
+<br>
+<br>
 
 <h1 align="center">📑 Project Report</h1>
 
-<p align="center">⌛️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️🏭️</p>
-
+## 🗂️ Table of Contents
+- [I. The Tools and The Specific Cooperation Methods We Used](#i-the-tools-and-the-specific-cooperation-methods-we-used)
+- [II. Role Allocations and Distributions](#ii-role-allocations-and-distributions)
+- [III. Excellently Executions During The Process](#iii-excellently-executions-during-the-process)
+- [IV. Challenges Encountered and Adjustments](#iv-challenges-encountered-and-adjustments)
+- [V. Others’ thoughts](#v-others-thoughts)
+  - [⚙️ Sustainability, ethics and accessibility](#️-sustainability-ethics-and-accessibility)
+  - [⚙️ Conclusion](#️-conclusion)
+      - [Lessons](#lessons)
+      - [Challenges](#challenges)
+      - [Future](#future)
+  - [⚙️ Contribution Statement](#️-contribution-statement)
+  - [⚙️ AI statement](#️-ai-statement)
 
 ## ⚙️ Introduction
 ***U Help U***
@@ -145,17 +160,24 @@ A Past Self is generated and replays the recorded actions using real‑time phys
   - Background: pink  
   - UI labels: “NOW” and “PAST”  
 
-<p align="center">◼️◻️◼️◻️◼️</p>
-
-
 
 ## ⚙️ Requirements 
-#### **Ideation process**:
+
+### Overview
+
+- [1 Ideation process](#1-ideation-process)
+- [2 User Stories](#2-user-stories)
+- [3 Onion Model](#3-onion-model)
+- [4 Early-stage Design](#4-early-stage-design)
+- [5 Use-Case Diagram](#5-use-case-diagram)
+- [6 Requirements Definition](#6-requirements-definition)
+
+### **1 Ideation process**:
 During the first stage of our game design, the first problem that came to us was which type of games we should choose. Each member of our group did detailed research about the specific game type he or she wanted to design, and finally carried out six ideas(each member with one idea). Then our group arranged a meeting and played all the games that could serve as prototypes for our game. The original ideas include Roguelike, Tower Defense, Simulation, PvP, puzzle-solving, etc. And after several hours of discussion, we finally decided to design a 2D platform puzzle-adventure game.
 
 However, a distinctive characteristic of our game is an important part that sets it apart from others. While trying various puzzle games, a game called U vs U attracted us, which has the key game mechanics that players need to find ways to escape from their past selves or kill them before their past self reaches the finish line. That is really an amazing mechanic that only needs one player, but needs to think from two different sides. And the concept of two selves existing in different times and spaces is also quite novel. As a result, we finally decided on the final idea of our game: U help U, a 2D platform puzzle-adventure game in which the player can release a clone through an operation called recording. The clone will replay all the movements and operations that were done by the player during recording time, just like the player’s phantom(The principle behind the recording is to capture each key press during the recording time, and let the clone repeat the movement caused by these key presses during replay time). What the player needs to do is to cooperate with the clone to clear each level. In our initial concept, we can design each level with a different style, so that the player can play various kinds of games in our game.
 
-#### **User Stories**:
+### **2 User Stories**:
 Based on this initial game idea, we formulated a series of user stories to help us prioritize the tasks. Our user stories are based on the format “As a __, I want to __, so that__”, to consider different requirements from different sides. Here are some crucial user stories on basic game controls, core game mechanics, game interactions, and user interface. Click [here](./DevLog/Week04/Requirements-v2.0.md) to view the full user stories, the epics we developed in the early stages, and their completion status.
 <figure style="text-align: center;">
   <img src="./assets/Requirements/user story.png" alt="Table 1: User stories">
@@ -166,7 +188,7 @@ In addition to player-centred user stories, we also considered requirements from
 Overall, these user stories provided a structured way to translate our initial game concept into a clearer set of development goals. They helped us identify the most important gameplay expectations from different perspectives, prioritise key tasks during development, and ensure that both player experience and project maintainability were taken into account. They also served as a bridge between the early design idea and the more detailed functional and non-functional requirements defined later in the project.
 
 
-#### **Onion Model**:
+### **3 Onion Model**:
 <figure style="text-align: center;">
   <img src="./assets/Requirements/Stakeholders.png" alt="Stakeholders">
   <figcaption>
@@ -179,12 +201,12 @@ The stakeholder onion model was also used to identify the main groups involved i
   <figcaption>Table 2: Stakeholder in Onion Model</figcaption>
 </figure>
 
-#### **Early-stage Design**:
+### **4 Early-stage Design**:
 During our early design stage, we mainly focused on designing different levels with various gameplay styles, such as roguelike in one level and shooting in another, but all combined with the record and reply mechanism. Because there are still some great ideas and map designs that were carried out by some group members. In this way, players can not only focus on puzzle solving using clones, but also can enjoy other different kinds of game styles in only one game. But with the deepening of research and development, we find that the game as a whole seems a bit disjointed. If each stage uses a different style, it seems that it is hard to find a suitable theme for the whole game. So we changed the development strategy to only focus on puzzle solving with the record system.
 
 In our first sprint(first demo version), we mainly focused on creating one level with a relatively easy puzzle(two buttons, the player and clone need to press them at the same time) to let players and testers get familiar with the game mechanics and how to cooperate with the record & replay system. For players who are more confident in their gaming skills, we also developed a level where players need to time their use of clone as stepping stones carefully to cross the chasm.
 
-#### **Use-Case Diagram**：
+### **5 Use-Case Diagram**：
 <figure style="text-align: center;">
   <img src="./assets/Requirements/User-case diagram.png" alt="Figure 2: User-Case Diagram">
   <figcaption>Figure 2: User-Case Diagram</figcaption>
@@ -195,7 +217,7 @@ Above is our user-case diagram and the following table summarizes the main purpo
   <figcaption>Table 3: User-Case Diagram Table</figcaption>
 </figure>
 
-#### **Requirements Definition**：
+### **6 Requirements Definition**：
 We attended each lab and testing marathon, gathering advice and feedback from different testers and players. After weekly meetings and bug fixing, our finalized functional and non-functional requirements are as follows:<br>
 <figure style="text-align: center;">
   <img src="./assets/Requirements/FR.png" alt="Table 4: Functional Requirements for U help U">
@@ -206,11 +228,10 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   <figcaption>Table 5: Non-Functional Requirements for U help U"</figcaption>
 </figure>
 
-
-
----
-
 ## ⚙️ Design
+
+### Overview
+
 - [1 Top Level Architecture](#1-top-level-architecture)
   - [1.1 Event System](#11-event-system)
   - [1.2 Level Manager](#12-level-manager)
@@ -227,15 +248,7 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   - [3.1 Record System](#31-record-system)
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
-<p align="center">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</p>
-
-### 1 Top Level Architecture
-<figure style="text-align:center;">
-  <img src="./assets/uml/top-level-architecture.png" style="border:4px solid #b26bff; border-radius:4px;">
-  <figcaption>Figure X: 描述文字</figcaption>
-</figure>
-
-
+### **1 Top Level Architecture**:
 <figure style="text-align: center;">
   <img src="./assets/uml/top-level-architecture.png" alt="diagram" width="600">
   <figcaption>Figure 1</figcaption>
@@ -245,9 +258,14 @@ This class diagram illustrates four core classes in the game and their collabora
   <img src="./assets/sequence-diagrams/setup.png" alt="diagram" width="600">
   <figcaption>Figure 2</figcaption>
 </figure>
+
 The sequence diagram shows the initialization order of these four core classes during game startup. 
 
-#### 1.1 Event System
+<h4 id="11-event-system" style="font-size:1.18rem; font-weight:600; margin-top:24px;">
+  <b>1.1 Event System</b>:
+</h4>
+
+
 <div align="center">
 
 <table>
@@ -304,35 +322,35 @@ The sequence diagram shows the initialization order of these four core classes d
 </div>
 
 The event system adopts a publish–subscribe model to centrally manage the dispatching of game events. 
-#### 1.2 Level Manager
+#### **1.2 Level Manager**:
 <figure style="text-align: center;">
   <img src="./assets/uml/level-manager.png" alt="diagram" width="600">
   <figcaption>Figure 3</figcaption>
 </figure>
 The LevelManager handles orchestration, Level executes level logic, CheckpointSystem manages respawn points, and Room represents spatial partitions within a level.
 
-#### 1.3 Page Switcher
+#### **1.3 Page Switcher**:
 <figure style="text-align: center;">
   <img src="./assets/uml/page-switcher.png" alt="diagram" width="600">
   <figcaption>Figure 4</figcaption>
 </figure>
 The Switcher is responsible for switching between static UI pages and level pages, and forwarding update and draw calls to the currently active page.
 
-### 2 Core Runtime Loop of Level Execution
+### **2 Core Runtime Loop of Level Execution**:
 <figure style="text-align: center;">
   <img src="./assets/sequence-diagrams/loop.png" alt="diagram" width="600">
   <figcaption>Figure 5</figcaption>
 </figure>
 The sequence diagram illustrates the execution order of the game’s main loop: each frame calls update() to refresh system states, followed by draw() to render the interface.
 
-#### 2.1 Game Entity System
+#### **2.1 Game Entity System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/game-entity.png" alt="diagram" width="600">
   <figcaption>Figure 6</figcaption>
 </figure>
 The Game Entity System defines all in game entities, providing unified data structures, shared behaviors, and consistent interfaces for characters, platforms, and interactive elements. The GameEntity base class provides fundamental attributes, while derived classes may include additional components such as collision and control components.
 
-#### 2.2 Collision System
+#### **2.2 Collision System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/collision-system.png" alt="diagram" width="600">
   <figcaption>Figure 7</figcaption>
@@ -344,29 +362,29 @@ The collision system implements a complete pipeline of collision detection → c
 -	CollisionResolver determines the collision direction and outputs a collisionMsg for the next stage.
 -	CollisionResponder performs the actual response based on the resolved result.
 
-#### 2.3 Character Control System
+#### **2.3 Character Control System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/control-system.png" alt="diagram" width="600">
   <figcaption>Figure 8</figcaption>
 </figure>
 The character control system processes native browser keyboard events, interprets player intent, validates whether the intent can be executed, and maps validated actions to updates of velocity and acceleration in the character’s movement component.
 
-#### 2.4 Physics System
+#### **2.4 Physics System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/physics-system.png" alt="diagram" width="600">
   <figcaption>Figure 9</figcaption>
 </figure>
 The physics system updates entity positions by applying velocity and acceleration.
 
-#### 2.5 UI System
+#### **2.5 UI System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/UI-system.png" alt="diagram" width="600">
   <figcaption>Figure 10</figcaption>
 </figure>
 The UI module manages all interface rendering and interaction logic, including static pages, level pages, UI components, and transition effects.
 
-### 3 Mechanism Systems
-#### 3.1 Record System
+### **3 Mechanism Systems**:
+#### **3.1 Record System**:
 <figure style="text-align: center;">
   <img src="./assets/uml/record-system.png" alt="diagram" width="600">
   <figcaption>Figure 11</figcaption>
@@ -378,7 +396,7 @@ The recording system is the core mechanic of the game. It manages recording stat
 </figure>
 The state machine defines the full lifecycle of the recording system—from Ready to Record, to Recording, to Ready to Replay, and finally Replaying. It ensures that the recording and replay processes are controllable, resettable, and free from state conflicts through explicit states, input events, and action logic.
 
-#### 3.2 Environmental Mechanisms
+#### **3.2 Environmental Mechanisms**:
 <figure style="text-align: center;">
   <img src="./assets/uml/mechanism1.png" alt="diagram" width="600">
   <figcaption>Figure 13</figcaption>
