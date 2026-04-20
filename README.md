@@ -5,13 +5,26 @@ Two selves. One timeline.<br>
 Record. Replay. Cooperate. Escape.
 </p>
 
-[![Start Game](./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png)](https://uob-comsm0166.github.io/2026-group-13/Demo1)
+
+<a href="https://uob-comsm0166.github.io/2026-group-13/Demo1">
+  <figure style="text-align:center;">
+    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png">
+    <figcaption></figcaption>
+  </figure>
+</a>
+
 
 <h1 align="center">📽️ Gameplay Preview</h1>
 
 <h1 align="center">👥 Team Members</h1>
 
-![GROUP PHOTO](./DevLog/Week01/img/Group_Picture01.jpg)
+
+<figure style="text-align:center;">
+  <img src="./DevLog/Week01/img/Group_Picture01.jpg"
+       style="border:6px solid #C1A4DC; border-radius:20px;">
+  <figcaption>Figure X: 描述文字</figcaption>
+</figure>
+
 
 - Group member 1, Zhiqing Zhang, ek25873@bristol.ac.uk, role
 - Group member 2, Siqi Xu, lv25773@bristol.ac.uk, role
@@ -20,52 +33,32 @@ Record. Replay. Cooperate. Escape.
 - Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
 - Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
 
-<style>
-.member-card {
-  padding: 12px 16px;
-  margin: 10px 0;
-  border-radius: 10px;
-  border: 1px solid #6b21a8;
-  background: #0f0f1a;
-}
-.member-card summary {
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #c084fc;
-}
-.member-card summary:hover {
-  color: #e879f9;
-}
-.member-content {
-  margin-top: 10px;
-  color: #d1d5db;
-  line-height: 1.6;
-}
-</style>
-
-<details class="member-card">
+<details>
   <summary>🌙 靖然 · Jingrán — 视觉 / 交互</summary>
-  <div class="member-content">
-    最开始不知道如何把动物融进游戏这样呈现，改了很多版本。<br>
-    看别的动物展示都很有触感。<br>
-    这次项目让我学到了如何在技术限制下保持视觉美感，<br>
-    也是逻辑和开发同样为视觉服务的重要性。
-  </div>
+
+最开始不知道如何把动物融进游戏这样呈现，改了很多版本。  
+看别的动物展示都很有触感。  
+这次项目让我学到了如何在技术限制下保持视觉美感，  
+也是逻辑和开发同样为视觉服务的重要性。
+
 </details>
 
-<details class="member-card">
+---
+
+<details>
   <summary>⚙️ 颖 — 系统设计</summary>
-  <div class="member-content">
-    （这里写颖的项目感想……）
-  </div>
+
+（这里写颖的项目感想……）
+
 </details>
 
-<details class="member-card">
+---
+
+<details>
   <summary>🛠️ 鹏坤 — 开发 / 逻辑</summary>
-  <div class="member-content">
-    （这里写鹏坤的项目感想……）
-  </div>
+
+（这里写鹏坤的项目感想……）
+
 </details>
 
 
