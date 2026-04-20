@@ -1,16 +1,11 @@
+<h1 align="center">🎮️ U Help U</h1>
 
-# 📽️U Help U
-
-
-🎞️🎞️🎞️🎞️🎞️🎞️🎞️
 Take control of both 'Your Past Self' and 'Your Present Self' — bring the two versions of you together in one timeline to collaborate and conquer the challenges!
 
 
 [![Start Game](./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png)](https://uob-comsm0166.github.io/2026-group-13/Demo1)
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ✦ ✦ ✦ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-# 📽️Team Members
+<h1 align="center">👥 Team Members</h1>
 
 ![GROUP PHOTO](./DevLog/Week01/img/Group_Picture01.jpg)
 
@@ -21,7 +16,10 @@ Take control of both 'Your Past Self' and 'Your Present Self' — bring the two 
 - Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
 - Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
 
-<h1 align="center">⚙️ Project Report</h1>
+<h1 align="center">📑 Project Report</h1>
+
+<p align="center">⌛️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️🏭️</p>
+
 
 ## ⚙️ Introduction
 ***U Help U***
@@ -101,7 +99,9 @@ A Past Self is generated and replays the recorded actions using real‑time phys
   - Background: pink  
   - UI labels: “NOW” and “PAST”  
 
----
+<p align="center">◼️◻️◼️◻️◼️</p>
+
+
 
 ## ⚙️ Requirements 
 #### **Ideation process**:
@@ -181,7 +181,15 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   - [3.1 Record System](#31-record-system)
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
-#### 1 Top Level Architecture
+<p align="center">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</p>
+
+### 1 Top Level Architecture
+<figure style="text-align:center;">
+  <img src="./assets/uml/top-level-architecture.png" style="border:4px solid #b26bff; border-radius:4px;">
+  <figcaption>Figure X: 描述文字</figcaption>
+</figure>
+
+
 <figure style="text-align: center;">
   <img src="./assets/uml/top-level-architecture.png" alt="diagram" width="600">
   <figcaption>Figure 1</figcaption>
@@ -264,7 +272,7 @@ The LevelManager handles orchestration, Level executes level logic, CheckpointSy
 </figure>
 The Switcher is responsible for switching between static UI pages and level pages, and forwarding update and draw calls to the currently active page.
 
-#### 2 Core Runtime Loop of Level Execution
+### 2 Core Runtime Loop of Level Execution
 <figure style="text-align: center;">
   <img src="./assets/sequence-diagrams/loop.png" alt="diagram" width="600">
   <figcaption>Figure 5</figcaption>
@@ -311,7 +319,7 @@ The physics system updates entity positions by applying velocity and acceleratio
 </figure>
 The UI module manages all interface rendering and interaction logic, including static pages, level pages, UI components, and transition effects.
 
-#### 3 Mechanism Systems
+### 3 Mechanism Systems
 #### 3.1 Record System
 <figure style="text-align: center;">
   <img src="./assets/uml/record-system.png" alt="diagram" width="600">
