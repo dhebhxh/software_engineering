@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Game</title>
+  <!-- 1. 先加载p5.js核心库（不变） -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/p5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1/lib/addons/p5.sound.min.js"></script>
+  
+  <!-- 2. 第一步：加载素材管理文件（定义bgImage_menu等变量，必须最先） -->
+  <script src="JS-asset-manager.js"></script>
+  
+  <!-- 3. 第二步：加载全局状态/常量（可选，如果你有JS-state.js的话） -->
+  
+<script src="JS-state.js"></script>
+  
+  <!-- 4. 第三步：加载核心游戏逻辑（按依赖顺序） -->
+  <script src="JS-cutscene.js"></script>
+  <script src="JS-background.js"></script>
+  <script src="JS-enemy-obstacle.js"></script>
+  <script src="JS-level-terrain.js"></script>
+  <script src="JS-player.js"></script>
+  
+  <!-- 5. 第四步：加载通用UI（含音量函数，依赖p5但不依赖素材） -->
+  <script src="ui/JS-ui-common.js"></script>
+  
+  
+  <!-- 7. 第六步：加载各页面专属UI（依赖素材/通用UI） -->
+  <script src="ui/JS-menu.js"></script>
+  <script src="ui/JS-levelChoose.js"></script>
+  <script src="ui/JS-setting.js"></script>
+  <script src="ui/JS-credits.js"></script>
+  <script src="ui/JS-ingame.js"></script>
+  
+   <!-- 6. 第五步：加载输入处理（依赖通用UI） -->
+  <script src="JS-input-handler.js"></script>
+  <!-- 8. 最后：加载主控文件（JS-sketch.js，调用所有初始化逻辑） -->
+  <script src="JS-sketch.js"></script>
+</head>
+<body></body>
+</html>

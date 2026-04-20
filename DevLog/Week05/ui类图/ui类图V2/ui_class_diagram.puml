@@ -1,0 +1,260 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' ============================================================
+' 文件结构（ui/ 文件夹，文件名 = 类名）：
+'   UIComponent.js / Button.js / Slider.js / SoundIcon.js
+'   Container.js / Page.js（含Sidebar）
+'   MenuPage.js / LevelSelectPage.js / SettingPage.js
+'   CreditsPage.js / StoryCrawlPage.js
+'   DeadScreen.js / WinScreen.js / GameHUD.js / GamePlayPage.js
+' ============================================================
+
+abstract class UIComponent {
+    - float x
+    - float y
+    + {abstract} draw(): void
+    + {abstract} isMouseOver(float mx, float my): boolean
+    + onMousePressed(float mx, float my): boolean
+    + onMouseDragged(float mx, float my): boolean
+    + onMouseReleased(float mx, float my): boolean
+}
+
+abstract class Button extends UIComponent {
+    - string label
+    - function callback
+    - boolean isHovered
+    - boolean isPressed
+    + {abstract} draw(): void
+    + {abstract} isMouseOver(float mx, float my): boolean
+    + onMousePressed(float mx, float my): boolean
+    + onMouseReleased(float mx, float my): boolean
+    + updateHover(float mx, float my): void
+}
+
+class RectButton extends Button {
+    - float w
+    - float h
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+}
+
+class ImageRectButton extends RectButton {
+    - p5.Image imgNormal
+    - p5.Image imgHover
+    - p5.Image imgPressed
+    + draw(): void
+}
+
+class CircleButton extends Button {
+    - float r
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+}
+
+class ImageCircleButton extends CircleButton {
+    - p5.Image imgNormal
+    - p5.Image imgHover
+    - p5.Image imgPressed
+    + draw(): void
+}
+
+class Slider extends UIComponent {
+    - float min
+    - float max
+    - float value
+    - float knobX
+    - boolean isDragging
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+    + onMousePressed(float mx, float my): boolean
+    + onMouseDragged(float mx, float my): boolean
+    + onMouseReleased(float mx, float my): boolean
+    + setValue(float val): void
+    + getValue(): float
+}
+
+class SoundIcon extends UIComponent {
+    - float size
+    - boolean isMuted
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+    + onMousePressed(float mx, float my): boolean
+}
+
+class ImageSoundIcon extends SoundIcon {
+    - p5.Image imgOn
+    - p5.Image imgOff
+    + draw(): void
+}
+
+class Container extends UIComponent {
+    - List<UIComponent> children
+    + addChild(UIComponent child): void
+    + removeChild(UIComponent child): void
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+    + onMousePressed(float mx, float my): boolean
+    + onMouseDragged(float mx, float my): boolean
+    + onMouseReleased(float mx, float my): boolean
+}
+note bottom of Container
+  鼠标事件分发：从后往前遍历子组件
+  某子组件返回 true 则停止分发
+end note
+
+class Page extends Container {
+    - color bgColor
+    - p5.Image bgImage
+    + draw(): void
+    + init(): void
+}
+note bottom of Page
+  先绘制背景（bgImage 或 bgColor，都没有则 background(0)）
+  再调用 super.draw() 绘制子组件
+  子类在 init() 中创建并 addChild 自己的组件
+end note
+
+class Sidebar extends Container {
+    - string selectedOptionId
+    + Sidebar(function(string) onOptionSelected)
+    + setSelectedOption(string optionId): void
+}
+note bottom of Sidebar
+  左侧选项按钮列表，高亮当前选中项
+  点击时调用 onOptionSelected(optionId) 回调
+end note
+
+class MenuPage extends Page {
+    + MenuPage(function onNavigate)
+    + init(): void
+    + setBgImage(p5.Image img): void
+}
+note bottom of MenuPage
+  三个圆形按钮：SETTING / PLAY / CREDITS
+  位置按背景图原始尺寸 2350×1322 缩放
+  PLAY → gameState = ST_STORY_CRAWL
+end note
+
+class LevelSelectPage extends Page {
+    - int unlockedCount
+    + LevelSelectPage(function onNavigate)
+    + init(): void
+    + setBgImage(p5.Image img): void
+}
+note bottom of LevelSelectPage
+  三个矩形关卡按钮（悬停半透明白色遮罩）
+  底部圆形 BACK 按钮（文字上移13px）
+  未解锁关卡不响应点击
+end note
+
+class SettingPage extends Page {
+    - Sidebar sidebar
+    - Slider _slider
+    - SoundIcon _muteBtn
+    + SettingPage(function onNavigate)
+    + init(): void
+}
+note bottom of SettingPage
+  左侧 Sidebar（音效/画面/控制）
+  右侧面板按选中项切换
+  音效面板：音量滑块 + 静音按钮
+end note
+
+class CreditsPage extends Page {
+    + CreditsPage(function onNavigate)
+    + init(): void
+}
+note bottom of CreditsPage
+  粉紫色标题 + 白色正文三行
+  底部矩形 BACK 按钮
+end note
+
+class StoryCrawlPage extends Page {
+    - float crawlScrollY
+    - boolean isFinished
+    + StoryCrawlPage(function onFinished)
+    + init(): void
+    + draw(): void
+    + reset(): void
+    + keyPressed(string key): void
+}
+note bottom of StoryCrawlPage
+  星空背景 + 文字从底部向上滚动
+  内容来自 JS-cutscene.js 的 starWarsStory[]
+  速度来自 crawlSpeed，Enter 键跳过
+  播完后调用 onFinished 回调
+end note
+
+class DeadScreen extends UIComponent {
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+}
+note bottom of DeadScreen
+  半透明黑色遮罩覆盖全屏
+  红色大字 "SUBJECT TERMINATED"
+  呼吸灯提示 "Press C to Restart"
+end note
+
+class WinScreen extends UIComponent {
+    + draw(): void
+    + isMouseOver(float mx, float my): boolean
+}
+note bottom of WinScreen
+  半透明深蓝遮罩覆盖全屏
+  绿色大字 "MISSION SUCCESSFUL"
+  提示 "Press C to Return to Level Select"
+end note
+
+class GameHUD extends Container {
+    + GameHUD(function onPause)
+    + init(): void
+    + draw(): void
+    + keyPressed(string key): void
+    - _drawRecordingUI(): void
+}
+note bottom of GameHUD
+  游戏内常驻 HUD
+  draw() 在子组件之上叠加录制状态提示
+  _drawRecordingUI()：RECORDING闪烁红点/REPLAYING蓝字/IDLE提示文字
+  keyPressed()：Esc/P 触发暂停
+end note
+
+class GamePlayPage extends Page {
+    - GameHUD hud
+    - DeadScreen deadScreen
+    - WinScreen winScreen
+    + GamePlayPage(function onNavigate)
+    + init(): void
+    + draw(): void
+    + showDead(): void
+    + showWin(): void
+    + hideDead(): void
+    + hideWin(): void
+    + hideAll(): void
+    + keyPressed(string key): void
+}
+note bottom of GamePlayPage
+  draw()：调用 hud.draw()，再按需叠加 deadScreen/winScreen
+  游戏主内容（地形/角色）由外部 drawPlaying() 先绘制
+  C 键：死亡重试调用 loadLevel() / 胜利返回关卡选择
+end note
+
+' ── 继承关系 ──────────────────────────────────
+Page          --|> Container
+Sidebar       --|> Container
+MenuPage      --|> Page
+LevelSelectPage --|> Page
+SettingPage   --|> Page
+CreditsPage   --|> Page
+StoryCrawlPage --|> Page
+GamePlayPage  --|> Page
+GameHUD       --|> Container
+
+' ── 组合关系 ──────────────────────────────────
+SettingPage   o-- Sidebar
+GamePlayPage  *-- GameHUD
+GamePlayPage  *-- DeadScreen
+GamePlayPage  *-- WinScreen
+
+@enduml

@@ -1,0 +1,203 @@
+<!-- 霓虹紫 · 废土 · 像素风 Markdown 主题 -->
+<style>
+  :root {
+    --primary: #A06BFF;
+    --bg-dark: #0b0614;
+    --bg-dark-2: #1a1028;
+    --accent: #FFDE8A;
+    --text-main: #f5f0ff;
+    --text-sub: #c7b7ff;
+    --border-glass: rgba(200,150,255,0.7);
+    --glass: rgba(255,255,255,0.06);
+  }
+
+  body {
+    background: radial-gradient(circle at top, #3a2a66 0, #1a1028 40%, #05030a 100%) !important;
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  /* 整体容器 */
+  .neon-wasteland {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 24px 20px 40px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(80,40,140,0.35));
+    border-radius: 12px;
+    border: 2px solid var(--border-glass);
+    box-shadow:
+      0 0 24px rgba(0,0,0,0.9),
+      0 0 32px rgba(160,107,255,0.5);
+    backdrop-filter: blur(6px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neon-wasteland::before {
+    content: "";
+    position: absolute;
+    inset: -40px;
+    background-image:
+      linear-gradient(120deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+      linear-gradient(210deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.18;
+    pointer-events: none;
+    mix-blend-mode: soft-light;
+  }
+
+  .neon-wasteland-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* 标题样式 */
+  .neon-title {
+    font-family: "Press Start 2P", system-ui, monospace;
+    font-size: 20px;
+    color: var(--primary);
+    text-shadow:
+      0 0 6px var(--primary),
+      0 0 12px rgba(160,107,255,0.9);
+    margin-bottom: 16px;
+  }
+
+  .neon-subtitle {
+    font-size: 12px;
+    color: var(--text-sub);
+    margin-bottom: 24px;
+  }
+
+  .neon-tagline {
+    font-size: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+
+  /* Markdown 标题重定义 */
+  .neon-wasteland-inner h1,
+  .neon-wasteland-inner h2,
+  .neon-wasteland-inner h3 {
+    font-family: "Press Start 2P", system-ui, monospace;
+    color: var(--primary);
+    text-shadow: 0 0 6px rgba(160,107,255,0.9);
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .neon-wasteland-inner h1 {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(200,150,255,0.4);
+    padding-bottom: 6px;
+  }
+
+  .neon-wasteland-inner h2 {
+    font-size: 14px;
+  }
+
+  .neon-wasteland-inner h3 {
+    font-size: 12px;
+  }
+
+  /* 正文文字 */
+  .neon-wasteland-inner p,
+  .neon-wasteland-inner li {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--text-main);
+  }
+
+  .neon-wasteland-inner ul,
+  .neon-wasteland-inner ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* 代码块 */
+  .neon-wasteland-inner pre {
+    background: #120b20 !important;
+    border-radius: 8px;
+    border: 1px solid rgba(200,150,255,0.5);
+    box-shadow: 0 0 14px rgba(0,0,0,0.9);
+  }
+
+  .neon-wasteland-inner code {
+    font-family: "JetBrains Mono", "Fira Code", monospace;
+    font-size: 12px;
+    color: #ffde8a;
+  }
+
+  /* 引用块 */
+  .neon-wasteland-inner blockquote {
+    border-left: 3px solid var(--primary);
+    padding-left: 12px;
+    margin-left: 0;
+    color: var(--text-sub);
+    background: rgba(0,0,0,0.35);
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  /* 像素按钮风格（可选） */
+  .pixel-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 2px solid var(--border-glass);
+    background: var(--glass);
+    color: var(--text-main);
+    font-family: "Press Start 2P", system-ui, monospace;
+    font-size: 10px;
+    text-decoration: none;
+    text-shadow: 0 0 4px rgba(200,150,255,0.9);
+    box-shadow: 0 0 12px rgba(0,0,0,0.9);
+    transition: 0.15s;
+  }
+
+  .pixel-button:hover {
+    background: rgba(255,255,255,0.18);
+    border-color: var(--accent);
+    box-shadow:
+      0 0 16px rgba(200,150,255,0.9),
+      0 0 22px rgba(0,0,0,1);
+    transform: translateY(-1px);
+  }
+</style>
+
+<div class="neon-wasteland">
+<div class="neon-wasteland-inner">
+
+<span class="neon-tagline">NEON · WASTELAND · PIXEL</span>
+<div class="neon-title">霓虹废土像素风 · 报告模板</div>
+<div class="neon-subtitle">
+用 Markdown 写报告，用游戏 UI 的方式展示。
+</div>
+
+# 一、项目概述
+
+这里是你的报告正文。你可以像平时一样写 Markdown，只是外面包了一层带主题风格的容器。
+
+- 关键字：霓虹紫 / 废土 / 像素
+- 适用场景：项目报告、设计文档、开发日志、世界观设定
+
+## 1.1 目标
+
+- 保持与游戏 UI 一致的视觉体验  
+- 让阅读报告像在浏览游戏菜单  
+- 支持代码、列表、引用等常规 Markdown 元素
+
+> 你可以把这个模板当作“报告皮肤”，内容随便换。
+
+## 1.2 示例代码块
+
+```js
+const theme = {
+  color: 'neon-purple',
+  mood: 'wasteland',
+  style: 'pixel'
+}
+console.log('Game-style report ready.', theme)
