@@ -181,7 +181,7 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   - [3.1 Record System](#31-record-system)
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
-<p align="center">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</p>
+<p align="center">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</p>
 
 ### 1 Top Level Architecture
 <figure style="text-align:center;">
