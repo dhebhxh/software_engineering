@@ -1,9 +1,13 @@
 <h1 align="center">🎮️ U Help U</h1>
 
-Take control of both 'Your Past Self' and 'Your Present Self' — bring the two versions of you together in one timeline to collaborate and conquer the challenges!
-
+<p align="center">
+Two selves. One timeline.<br>
+Record. Replay. Cooperate. Escape.
+</p>
 
 [![Start Game](./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png)](https://uob-comsm0166.github.io/2026-group-13/Demo1)
+
+<h1 align="center">📽️ Gameplay Preview</h1>
 
 <h1 align="center">👥 Team Members</h1>
 
@@ -15,6 +19,195 @@ Take control of both 'Your Past Self' and 'Your Present Self' — bring the two 
 - Group member 4, Yiyuan Yao, jg25755@bristol.ac.uk, role
 - Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
 - Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
+
+<!-- 放在 Markdown 里原样使用即可 -->
+
+<style>
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.member-card {
+  position: relative;
+  width: 180px;
+  padding: 1rem;
+  border-radius: 12px;
+  background: #111827;
+  color: #e5e7eb;
+  box-shadow: 0 0 0 1px rgba(148,163,184,0.4);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(15,23,42,0.7);
+  background: radial-gradient(circle at top, #4c1d95 0, #020617 55%);
+}
+
+.member-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.member-role {
+  font-size: 0.8rem;
+  color: #9ca3af;
+  margin-bottom: 0.5rem;
+}
+
+.member-hint {
+  font-size: 0.75rem;
+  color: #a855f7;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.member-card:hover .member-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal {
+  max-width: 520px;
+  width: 90%;
+  background: #020617;
+  border-radius: 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+  border: 1px solid rgba(148,163,184,0.6);
+  color: #e5e7eb;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.modal-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.modal-close {
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.modal-body {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d1d5db;
+  white-space: pre-line;
+}
+</style>
+
+<div class="team-grid">
+  <!-- 成员 1 -->
+  <div class="member-card" data-member="jingran">
+    <div class="member-name">靖然 · Jingrán</div>
+    <div class="member-role">视觉 / 交互</div>
+    <div class="member-hint">点击查看项目感想</div>
+  </div>
+
+  <!-- 成员 2 -->
+  <div class="member-card" data-member="ying">
+    <div class="member-name">颖</div>
+    <div class="member-role">系统设计</div>
+    <div class="member-hint">点击查看项目感想</div>
+  </div>
+
+  <!-- 成员 3 -->
+  <div class="member-card" data-member="pengkun">
+    <div class="member-name">鹏坤</div>
+    <div class="member-role">开发 / 逻辑</div>
+    <div class="member-hint">点击查看项目感想</div>
+  </div>
+</div>
+
+<!-- 弹窗容器 -->
+<div class="modal-backdrop" id="member-modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title"></div>
+      <button class="modal-close" onclick="closeMemberModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+const memberData = {
+  jingran: {
+    title: "靖然 · Jingrán — 项目感想",
+    text: `最开始不知道如何把动物融进游戏这样呈现，改了很多版本。
+零次看别的动物展示都很有触感。
+这次项目让我学到了如何在技术限制下保持视觉美感，
+也是逻辑和开发同样为视觉服务的重要性。`
+  },
+  ying: {
+    title: "颖 — 项目感想",
+    text: `（在这里写颖的项目感想内容……）`
+  },
+  pengkun: {
+    title: "鹏坤 — 项目感想",
+    text: `（在这里写鹏坤的项目感想内容……）`
+  }
+};
+
+const modalBackdrop = document.getElementById("member-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalBody = document.getElementById("modal-body");
+
+document.querySelectorAll(".member-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const key = card.getAttribute("data-member");
+    const data = memberData[key];
+    if (!data) return;
+    modalTitle.textContent = data.title;
+    modalBody.textContent = data.text;
+    modalBackdrop.classList.add("active");
+  });
+});
+
+function closeMemberModal() {
+  modalBackdrop.classList.remove("active");
+}
+
+modalBackdrop.addEventListener("click", (e) => {
+  if (e.target === modalBackdrop) {
+    closeMemberModal();
+  }
+});
+</script>
+
 
 <h1 align="center">📑 Project Report</h1>
 
@@ -181,7 +374,7 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   - [3.1 Record System](#31-record-system)
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
-<p align="center">⌛️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️⌛️</p>
+<p align="center">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</p>
 
 ### 1 Top Level Architecture
 <figure style="text-align:center;">
