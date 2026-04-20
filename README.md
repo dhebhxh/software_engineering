@@ -1,22 +1,16 @@
-# 2026-group-13
-2026 COMSM0166 group 13
 
-## U Help U
+# 📽️U Help U
 
+
+🎞️🎞️🎞️🎞️🎞️🎞️🎞️
 Take control of both 'Your Past Self' and 'Your Present Self' — bring the two versions of you together in one timeline to collaborate and conquer the challenges!
 
-IMAGE. Add an image of your game here, keep this updated with a snapshot of your latest development.
 
-LINK. Add a link here to your deployed game, you can also make the image above link to your game if you wish. Your game lives in the [/docs](/docs) folder, and is published using Github pages. 
-
-VIDEO. Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
-
-## Game Demo
 [![Start Game](./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png)](https://uob-comsm0166.github.io/2026-group-13/Demo1)
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ ✦ ✦ ✦ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-
-## Your Group
+# 📽️Team Members
 
 ![GROUP PHOTO](./DevLog/Week01/img/Group_Picture01.jpg)
 
@@ -27,9 +21,9 @@ VIDEO. Include a demo video of your game here (you don't have to wait until the 
 - Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
 - Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
 
-## Project Report
+<h1 align="center">⚙️ Project Report</h1>
 
-### Introduction
+## ⚙️ Introduction
 ***U Help U***
 
 *U Help U* is a 2D side‑scrolling platformer puzzle game built around the concept of **self‑collaboration**. Players control the “Present Self” to record actions, and upon playback, a “Past Self” is generated. This Past Self faithfully reproduces the recorded inputs and physics‑based trajectory, acting as a **solid cooperative unit** that can interact physically with the Present Self—standing on each other, boosting each other, and enabling creative traversal strategies.
@@ -109,7 +103,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 
 ---
 
-### Requirements 
+## ⚙️ Requirements 
 #### **Ideation process**:
 During the first stage of our game design, the first problem that came to us was which type of games we should choose. Each member of our group did detailed research about the specific game type he or she wanted to design, and finally carried out six ideas(each member with one idea). Then our group arranged a meeting and played all the games that could serve as prototypes for our game. The original ideas include Roguelike, Tower Defense, Simulation, PvP, puzzle-solving, etc. And after several hours of discussion, we finally decided to design a 2D platform puzzle-adventure game.
 
@@ -170,7 +164,7 @@ We attended each lab and testing marathon, gathering advice and feedback from di
 
 ---
 
-### Design
+## ⚙️ Design
 - [1 Top Level Architecture](#1-top-level-architecture)
   - [1.1 Event System](#11-event-system)
   - [1.2 Level Manager](#12-level-manager)
@@ -343,7 +337,7 @@ The mechanism system manages reusable level mechanisms, including circuit based 
 
 ---
 
-### Implementation
+## ⚙️ Implementation
 
 - 15% ~750 words
 
@@ -367,7 +361,7 @@ To overcome this architectural bottleneck, we undertook a major refactoring of t
 
 ---
 
-### Evaluation
+## ⚙️ Evaluation
 
 - 15% ~750 words
 - One qualitative evaluation (of your choice)
@@ -426,7 +420,7 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 * **Context:** As levels become more intricate, managing interactions between the main player, multiple clones, various switches, timed doors, and traps using standard conditional statements (`if/else`) leads to highly coupled, unmaintainable "spaghetti code."
 * **Challenge:** Refactoring the game's core interaction logic by implementing an Event-Driven Architecture (such as the Observer pattern or an Event Bus system). The technical difficulty is designing a centralized event dispatcher that allows entities to communicate asynchronously. For example, a pressure plate simply broadcasts a "stepped_on" event, and any linked door or trap listens for this event to trigger its animation and state change. This eliminates direct hard-coded dependencies and lays the technical groundwork for highly scalable and complex puzzle designs.
 
-### Process 
+## ⚙️ Process 
 # I. The Tools and The Specific Cooperation Methods We Used 
 
 - **Meetings (In-person and Online):**  
@@ -499,8 +493,9 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 ---
 
 # V. Others’ thoughts
+## ⚙️ Sustainability, ethics and accessibility
 
-### Conclusion
+## ⚙️ Conclusion
 
 Our project: **U Help U**, successfully transforms an abstract idea into a coherent and playable game. Instead of relying on combat, the game requires players to record the actions of their "present self" and then cooperate with their "past self" to complete levels. The core challenge is one of planning, observation, and spatial reasoning rather than reflex alone.
 
@@ -527,16 +522,8 @@ Looking ahead, if we have the chance to develop a larger next version, the proje
 
 Overall, our project successfully achieved its core creative objective: transforming repetition into something meaningful. Previous attempts are not discarded because of failure but become practical resources for driving progress. Yes, what truly drives progress is never a single perfect attempt, but rather continuous repetition, revisions, iteration, and the value accumulated from all past efforts.
 
-### Contribution Statement
+## ⚙️ Contribution Statement
 
 - Provide a table of everyone's contribution, which *may* be used to weight individual grades. We expect that the contribution will be split evenly across team-members in most cases. Please let us know as soon as possible if there are any issues with teamwork as soon as they are apparent and we will do our best to help your team work harmoniously together.
 
-### Additional Marks
-
-You can delete this section in your own repo, it's just here for information. in addition to the marks above, we will be marking you on the following two points:
-
-- **Quality** of report writing, presentation, use of figures and visual material (5% of report grade) 
-  - Please write in a clear concise manner suitable for an interested layperson. Write as if this repo was publicly available.
-- **Documentation** of code (5% of report grade)
-  - Organise your code so that it could easily be picked up by another team in the future and developed further.
-  - Is your repo clearly organised? Is code well commented throughout?
+## ⚙️ AI statement
