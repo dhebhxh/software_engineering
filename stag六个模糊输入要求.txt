@@ -1,0 +1,106 @@
+🌟 STAG 的 Action 命令解析：六大灵活性要求（核心本质总结）
+下面每一条我都用一句“本质”帮你抓住重点，你可以据此反推你的解析器应该支持什么。
+
+1. 大小写不敏感（Case-insensitive）
+本质：所有比较都要统一成小写。
+
+你应该在解析的最开始就把整条命令 .toLowerCase()。
+
+2. 装饰词（Decorated words）可以随便加
+例如：
+
+please chop the tree using the axe
+
+could you maybe open the trapdoor with the key
+
+都要等价于：
+
+chop tree axe
+
+open trapdoor key
+
+本质：你必须能从一堆无用词里“捞出”触发词和实体名。
+
+这意味着：
+
+你不能依赖固定语序
+
+你不能依赖固定句型
+
+你必须能识别哪些词是实体名、哪些是 trigger、哪些是垃圾词
+
+3. 词序不重要（Word ordering flexible）
+例如：
+
+chop tree with axe
+
+use axe to chop tree
+
+tree chop axe
+
+都必须匹配同一个 action。
+
+本质：你不能依赖“动词在前、名词在后”的结构。
+你只能依赖“出现了哪些 trigger 和哪些实体名”。
+
+4. 多词 trigger 必须保持顺序
+例如 trigger 是：
+
+cut down
+
+那么：
+
+cut down tree ✔️
+
+down cut tree ❌
+
+cut the tree down ❌（因为中间不能插入装饰词）
+
+本质：多词 trigger 是一个“固定短语”，不能被拆开，也不能被插入词。
+
+这意味着你的解析器必须：
+
+在原始字符串中搜索连续匹配的 trigger phrase
+
+不能把 trigger phrase 当成“两个独立词”
+
+5. Partial commands（部分省略）是允许的
+例如 action 需要：
+
+subjects: trapdoor, key
+
+玩家可以输入：
+
+unlock trapdoor
+
+unlock with key
+
+unlock trapdoor with key
+
+都必须匹配同一个 action。
+
+本质：玩家输入只要包含 action 所需 subjects 的“至少一个”，就可以尝试匹配。
+
+但注意：
+
+玩家输入必须至少包含一个 subject
+
+不能只输入 trigger（如 unlock）
+
+6. Extraneous entities（多余实体）会导致匹配失败
+例如：
+
+open trapdoor with hammer ❌（hammer 不属于这个 action）
+
+chop tree with axe and coin ❌（coin 是多余的）
+
+get key from forest ❌（forest 是多余的）
+
+本质：玩家输入中出现的实体名必须 EXACTLY 属于 action 的 subjects。
+多一个都不行。
+
+这条规则非常关键，它保证了：
+
+action 匹配不会“过度宽松”
+
+built‑in 命令不会被污染

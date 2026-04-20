@@ -1,88 +1,33 @@
-<style>
-/* 去掉 Markdown 默认边距，让海报真正铺满全屏 */
-body {
-    background: #D7BBF5;
-    margin: 0;
-    padding: 0;
-}
+# 2026-group-13
+2026 COMSM0166 group 13
 
-.markdown-preview-view,
-.markdown-preview-section,
-.markdown-preview {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-</style>
+## U Help U
 
-<!-- 海报容器：突破 markdown 限制，真正全屏宽度 -->
-<div style="
-    position: relative;
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    overflow: hidden;
-">
+Take control of both 'Your Past Self' and 'Your Present Self' — bring the two versions of you together in one timeline to collaborate and conquer the challenges!
 
-  <!-- 海报图：铺满整页宽度 -->
-  <img src="./assets/Firefly_Gemini Flash_优化游戏宣传图片, 首先是文字部分, 游戏宣传图片上的文字应该只有游戏的名字- U help U,其他的文字不允许出现, 游戏的主角是一个方形的,不是圆形的,怪物也是方形 76611.png"
-       style="width:100%; display:block;">
+IMAGE. Add an image of your game here, keep this updated with a snapshot of your latest development.
 
-  <!-- 底部渐变透明过渡 -->
-  <div style="
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(to bottom, rgba(215,187,245,0) 0%, #D7BBF5 100%);
-  "></div>
+LINK. Add a link here to your deployed game, you can also make the image above link to your game if you wish. Your game lives in the [/docs](/docs) folder, and is published using Github pages. 
 
-  <!-- 中下部按钮（海报风格） -->
-  <a href="https://uob-comsm0166.github.io/2026-group-13/Demo1"
-     style="
-        position: absolute;
-        left: 50%;
-        bottom: 50%;
-        transform: translateX(-50%);
-        padding: 16px 36px;
-        background:#a06bff;
-        color:#1a1028;
-        font-size:26px;
-        font-family:monospace;
-        font-weight:bold;
-        border-radius:10px;
-        text-decoration:none;
-        border:3px solid #e6c6ff;
-        box-shadow:0 0 25px #d28cff;
-        z-index: 10;
-     ">
-    ▶ ENTER GAME
-  </a>
+VIDEO. Include a demo video of your game here (you don't have to wait until the end, you can insert a work in progress video)
 
-</div>
+## Game Demo
+[![Start Game](./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png)](https://uob-comsm0166.github.io/2026-group-13/Demo1)
 
-## 👥 Team 13 — Developers
 
-| Member | Email | Role |
-|--------|--------|------|
-| Zhiqing Zhang | ek25873@bristol.ac.uk | role |
-| Siqi Xu | lv25773@bristol.ac.uk | role |
-| Xuelin Ma | pw25500@bristol.ac.uk | role |
-| Yiyuan Yao | jg25755@bristol.ac.uk | role |
-| Jingran Zhang | sx25997@bristol.ac.uk | role |
-| Wenlei Miao | hz25681@bristol.ac.uk | role |
+
+## Your Group
+
+![GROUP PHOTO](./DevLog/Week01/img/Group_Picture01.jpg)
+
+- Group member 1, Zhiqing Zhang, ek25873@bristol.ac.uk, role
+- Group member 2, Siqi Xu, lv25773@bristol.ac.uk, role
+- Group member 3, Xuelin Ma, pw25500@bristol.ac.uk, role
+- Group member 4, Yiyuan Yao, jg25755@bristol.ac.uk, role
+- Group member 5, Jingran Zhang, sx25997@bristol.ac.uk, role
+- Group member 6, Wenlei Miao, hz25681@bristol.ac.uk, role
 
 ## Project Report
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Core Gameplay (How to Play)](#core-gameplay-how-to-play)
-- [Game Goals](#game-goals)
-- [Core Highlights (Differentiation)](#core-highlights-differentiation)
-- [Requirements](#requirements)
-- [Design](#design)
-- [Implementation](#implementation)
-- [Evaluation](#evaluation)
-- [Process](#process)
 
 ### Introduction
 ***U Help U***
