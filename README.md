@@ -69,18 +69,12 @@ Record. Replay. Cooperate. Escape.
 <h1 align="center">📑 Project Report</h1>
 
 ## 🗂️ Table of Contents
-- [I. The Tools and The Specific Cooperation Methods We Used](#i-the-tools-and-the-specific-cooperation-methods-we-used)
-- [II. Role Allocations and Distributions](#ii-role-allocations-and-distributions)
-- [III. Excellently Executions During The Process](#iii-excellently-executions-during-the-process)
-- [IV. Challenges Encountered and Adjustments](#iv-challenges-encountered-and-adjustments)
-- [V. Others’ thoughts](#v-others-thoughts)
-  - [⚙️ Sustainability, ethics and accessibility](#️-sustainability-ethics-and-accessibility)
-  - [⚙️ Conclusion](#️-conclusion)
-      - [Lessons](#lessons)
-      - [Challenges](#challenges)
-      - [Future](#future)
-  - [⚙️ Contribution Statement](#️-contribution-statement)
-  - [⚙️ AI statement](#️-ai-statement)
+
+- [Introduction](#️-introduction)
+- [Requirements](#️-requirements)
+- [Design](#️-design)
+- [Implementation](#️-implementation)
+- [Evaluation](#️-evaluation)
 
 ## ⚙️ Introduction
 ***U Help U***
@@ -249,11 +243,14 @@ We attended each lab and testing marathon, gathering advice and feedback from di
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
 ### **1 Top Level Architecture**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/top-level-architecture.png" alt="diagram" width="600">
   <figcaption>Figure 1</figcaption>
 </figure>
+
 This class diagram illustrates four core classes in the game and their collaboration: AppCoordinator, EventBus, SwitcherMain, and LevelManager, which are responsible for overall orchestration, event dispatching, page switching, and level management respectively.
+
 <figure style="text-align: center;">
   <img src="./assets/sequence-diagrams/setup.png" alt="diagram" width="600">
   <figcaption>Figure 2</figcaption>
@@ -261,10 +258,7 @@ This class diagram illustrates four core classes in the game and their collabora
 
 The sequence diagram shows the initialization order of these four core classes during game startup. 
 
-<h4 id="11-event-system" style="font-size:1.18rem; font-weight:600; margin-top:24px;">
-  <b>1.1 Event System</b>:
-</h4>
-
+#### **1.2 Level Manager**:
 
 <div align="center">
 
@@ -322,35 +316,45 @@ The sequence diagram shows the initialization order of these four core classes d
 </div>
 
 The event system adopts a publish–subscribe model to centrally manage the dispatching of game events. 
+
 #### **1.2 Level Manager**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/level-manager.png" alt="diagram" width="600">
   <figcaption>Figure 3</figcaption>
 </figure>
+
 The LevelManager handles orchestration, Level executes level logic, CheckpointSystem manages respawn points, and Room represents spatial partitions within a level.
 
 #### **1.3 Page Switcher**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/page-switcher.png" alt="diagram" width="600">
   <figcaption>Figure 4</figcaption>
 </figure>
+
 The Switcher is responsible for switching between static UI pages and level pages, and forwarding update and draw calls to the currently active page.
 
 ### **2 Core Runtime Loop of Level Execution**:
+
 <figure style="text-align: center;">
   <img src="./assets/sequence-diagrams/loop.png" alt="diagram" width="600">
   <figcaption>Figure 5</figcaption>
 </figure>
+
 The sequence diagram illustrates the execution order of the game’s main loop: each frame calls update() to refresh system states, followed by draw() to render the interface.
 
 #### **2.1 Game Entity System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/game-entity.png" alt="diagram" width="600">
   <figcaption>Figure 6</figcaption>
 </figure>
+
 The Game Entity System defines all in game entities, providing unified data structures, shared behaviors, and consistent interfaces for characters, platforms, and interactive elements. The GameEntity base class provides fundamental attributes, while derived classes may include additional components such as collision and control components.
 
 #### **2.2 Collision System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/collision-system.png" alt="diagram" width="600">
   <figcaption>Figure 7</figcaption>
@@ -363,48 +367,62 @@ The collision system implements a complete pipeline of collision detection → c
 -	CollisionResponder performs the actual response based on the resolved result.
 
 #### **2.3 Character Control System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/control-system.png" alt="diagram" width="600">
   <figcaption>Figure 8</figcaption>
 </figure>
+
 The character control system processes native browser keyboard events, interprets player intent, validates whether the intent can be executed, and maps validated actions to updates of velocity and acceleration in the character’s movement component.
 
 #### **2.4 Physics System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/physics-system.png" alt="diagram" width="600">
   <figcaption>Figure 9</figcaption>
 </figure>
+
 The physics system updates entity positions by applying velocity and acceleration.
 
 #### **2.5 UI System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/UI-system.png" alt="diagram" width="600">
   <figcaption>Figure 10</figcaption>
 </figure>
+
 The UI module manages all interface rendering and interaction logic, including static pages, level pages, UI components, and transition effects.
 
 ### **3 Mechanism Systems**:
+
 #### **3.1 Record System**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/record-system.png" alt="diagram" width="600">
   <figcaption>Figure 11</figcaption>
 </figure>
+
 The recording system is the core mechanic of the game. It manages recording states, captures player actions, and replays them. RecordSystem serves as the central component, combining RecordUI for interface rendering and relying on Clip to store recorded data.
+
 <figure style="text-align: center;">
   <img src="./assets/uml/record-state-diagram.png" alt="diagram" width="600">
   <figcaption>Figure 12</figcaption>
 </figure>
+
 The state machine defines the full lifecycle of the recording system—from Ready to Record, to Recording, to Ready to Replay, and finally Replaying. It ensures that the recording and replay processes are controllable, resettable, and free from state conflicts through explicit states, input events, and action logic.
 
 #### **3.2 Environmental Mechanisms**:
+
 <figure style="text-align: center;">
   <img src="./assets/uml/mechanism1.png" alt="diagram" width="600">
   <figcaption>Figure 13</figcaption>
 </figure>
+
 <figure style="text-align: center;">
   <img src="./assets/uml/mechanism2.png" alt="diagram" width="600">
   <figcaption>Figure 14</figcaption>
 </figure>
+
 The mechanism system manages reusable level mechanisms, including circuit based door unlocking and controllable moving platforms. Diagram V shows the class structure of the mechanism system: ButtonPlatformLinkSystem and WireIndicatorSystem handle different linkage logics.
 
 ---
@@ -493,7 +511,7 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 * **Challenge:** Refactoring the game's core interaction logic by implementing an Event-Driven Architecture (such as the Observer pattern or an Event Bus system). The technical difficulty is designing a centralized event dispatcher that allows entities to communicate asynchronously. For example, a pressure plate simply broadcasts a "stepped_on" event, and any linked door or trap listens for this event to trigger its animation and state change. This eliminates direct hard-coded dependencies and lays the technical groundwork for highly scalable and complex puzzle designs.
 
 ## ⚙️ Process 
-# I. The Tools and The Specific Cooperation Methods We Used 
+### I. The Tools and The Specific Cooperation Methods We Used 
 
 - **Meetings (In-person and Online):**  
   In-person meetings are conducted after class to facilitate face-to-face discussions, which enhance efficiency and allow for flexible supplementation of any limitations associated with online meetings. Online meetings are primarily held via Tencent Meeting, with at least one full-group meeting per week to synchronize overall progress and strategic direction. Specific issues related to the module will be addressed by the relevant team members at any time as needed.
@@ -517,13 +535,13 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 
 ---
 
-# II. Role Allocations and Distributions
+### II. Role Allocations and Distributions
 
 <div align="center">
     <img src="assets/Process part picture1.png" width="500">
 </div>
 
-# III. Excellently Executions During The Process
+### III. Excellently Executions During The Process
 
 - **Continuous Version Iteration:**  
   A functional demo was completed in the early stages of the project, followed by frequent updates throughout development. Each delivery also constituted a fully playable version, with no incomplete prototypes submitted which follows the idea of delivering working software frequently in Agile method.
@@ -540,7 +558,7 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 
 ---
 
-# IV. Challenges Encountered and Adjustments
+### IV. Challenges Encountered and Adjustments
 
 - **Fragmented Collaboration and Lack of Integration:**  
   In the early stages of the project, team members had limited experience in project development, JavaScript, and game design. As a result, individuals explored independently, leading to siloed work, insufficient communication, and knowledge fragmentation. This was reflected in unclear code interfaces and limited understanding between modules.  
@@ -564,7 +582,7 @@ Based on the quantitative evaluation results and the core mechanics of our time-
 
 ---
 
-# V. Others’ thoughts
+### V. Others’ thoughts
 ## ⚙️ Sustainability, ethics and accessibility
 
 ## ⚙️ Conclusion
