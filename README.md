@@ -7,10 +7,9 @@ Record. Replay. Cooperate. Escape.
 
 <div align="center">
   <a href="https://uob-comsm0166.github.io/2026-group-13/Demo1">
-    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png" width="800">
+    <img src="./assets/game-picture.png" width="800">
     <br>
     <b></b>
-    <br>
     <br>
   </a>
 </div>
@@ -27,7 +26,6 @@ Record. Replay. Cooperate. Escape.
   <img src="./DevLog/Week01/img/Group_Picture01.jpg" width="600">
   <br>
   <b></b>
-  <br>
   <br>
 </div>
 
@@ -69,7 +67,6 @@ Record. Replay. Cooperate. Escape.
   </tr>
 </table>
 
-<br>
 <br>
 
 <h1 align="center">📑 Project Report</h1>
@@ -179,27 +176,41 @@ However, a distinctive characteristic of our game is an important part that sets
 
 ### **2 User Stories**:
 Based on this initial game idea, we formulated a series of user stories to help us prioritize the tasks. Our user stories are based on the format “As a __, I want to __, so that__”, to consider different requirements from different sides. Here are some crucial user stories on basic game controls, core game mechanics, game interactions, and user interface. Click [here](./DevLog/Week04/Requirements-v2.0.md) to view the full user stories, the epics we developed in the early stages, and their completion status.
-<figure style="text-align: center;">
-  <img src="./assets/Requirements/user story.png" alt="Table 1: User stories">
-  <figcaption>Table 1: A Few User Stories</figcaption>
-</figure>
+
+<div align="center">
+  <br>
+  <img src="./assets/Requirements/user story.png" width="800">
+  <br>
+  <b>Table 1: A Few User Stories</b>
+  <br>
+  <br>
+</div>
 
 In addition to player-centred user stories, we also considered requirements from the perspectives of designers and developers. This helped us ensure that the game would not only be enjoyable for players, but also practical to extend, balance, and maintain during development.
 Overall, these user stories provided a structured way to translate our initial game concept into a clearer set of development goals. They helped us identify the most important gameplay expectations from different perspectives, prioritise key tasks during development, and ensure that both player experience and project maintainability were taken into account. They also served as a bridge between the early design idea and the more detailed functional and non-functional requirements defined later in the project.
 
 
 ### **3 Onion Model**:
-<figure style="text-align: center;">
-  <img src="./assets/Requirements/Stakeholders.png" alt="Stakeholders">
-  <figcaption>
-    Figure 1: Onion Model: Stakeholders
-  </figcaption>
-</figure>
+
+<div align="center">
+  <br>
+  <img src="./assets/Requirements/Stakeholders.png" width="800">
+  <br>
+  <b>Table 1: A Few User Stories</b>
+  <br>
+  <br>
+</div>
+
 The stakeholder onion model was also used to identify the main groups involved in or affected by the game, and to clarify their different roles and levels of influence throughout our project.
-<figure style="text-align: center;">
-  <img src="./assets/Requirements/onion model table.png" alt="Table 2: Onion Model">
-  <figcaption>Table 2: Stakeholder in Onion Model</figcaption>
-</figure>
+
+<div align="center">
+  <br>
+  <img src="./assets/Requirements/onion model table.png" width="800">
+  <br>
+  <b>Table 2: Stakeholder in Onion Model</b>
+  <br>
+  <br>
+</div>
 
 ### **4 Early-stage Design**:
 During our early design stage, we mainly focused on designing different levels with various gameplay styles, such as roguelike in one level and shooting in another, but all combined with the record and reply mechanism. Because there are still some great ideas and map designs that were carried out by some group members. In this way, players can not only focus on puzzle solving using clones, but also can enjoy other different kinds of game styles in only one game. But with the deepening of research and development, we find that the game as a whole seems a bit disjointed. If each stage uses a different style, it seems that it is hard to find a suitable theme for the whole game. So we changed the development strategy to only focus on puzzle solving with the record system.
@@ -207,6 +218,7 @@ During our early design stage, we mainly focused on designing different levels w
 In our first sprint(first demo version), we mainly focused on creating one level with a relatively easy puzzle(two buttons, the player and clone need to press them at the same time) to let players and testers get familiar with the game mechanics and how to cooperate with the record & replay system. For players who are more confident in their gaming skills, we also developed a level where players need to time their use of clone as stepping stones carefully to cross the chasm.
 
 ### **5 Use-Case Diagram**：
+
 <figure style="text-align: center;">
   <img src="./assets/Requirements/User-case diagram.png" alt="Figure 2: User-Case Diagram">
   <figcaption>Figure 2: User-Case Diagram</figcaption>
@@ -252,7 +264,7 @@ We attended each lab and testing marathon, gathering advice and feedback from di
 
 <div align="center">
   <br>
-  <img src="./assets/uml/top-level-architecture.png" width="800">
+  <img src="./assets/uml/top-level-architecture (2).png" width="800">
   <br>
   <b>Figure X: Class diagram of the main game architecture</b>
   <br>
