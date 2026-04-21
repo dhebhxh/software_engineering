@@ -21,7 +21,7 @@ Record. Replay. Cooperate. Escape.
 <h1 align="center">👥 Team Members</h1>
 
 <figure style="text-align: center;">
-  <img src="./DevLog/Week01/img/Group_Picture01.jpg" alt="diagram" width="600">
+  <img src="./DevLog/Week01/img/Group_Picture01.jpg" alt="diagram">
   <figcaption></figcaption>
 </figure>
 
