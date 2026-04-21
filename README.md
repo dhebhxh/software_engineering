@@ -647,7 +647,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 
 <div align="center">
   <br>
-  <img src="./assets/Process/Process part picture1.png" width="500">
+  <img src="./assets/Process/Process part picture1.png" width="800">
   <br>
   <b></b>
   <br>
@@ -660,7 +660,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 
 <div align="center">
   <br>
-  <img src="./assets/Process/Process part picture2.png" width="500">
+  <img src="./assets/Process/Process part picture2.png" width="800">
   <br>
   <b></b>
   <br>
@@ -724,7 +724,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 
 <div align="center">
   <br>
-  <img src="./assets/Conclusion/Conclusion part picture 1.png" width="500">
+  <img src="./assets/Conclusion/Conclusion part picture 1.png" width="800">
   <br>
   <b></b>
   <br>
