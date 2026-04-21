@@ -6,10 +6,13 @@ Record. Replay. Cooperate. Escape.
 </p>
 
 <a href="https://uob-comsm0166.github.io/2026-group-13/Demo1">
-  <figure style="text-align:center;">
-    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png">
-    <figcaption></figcaption>
-  </figure>
+  <div align="center">
+    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png" width="600">
+    <br>
+    <b></b>
+    <br>
+    <br>
+  </div>
 </a>
 
 <h1 align="center">📽️ Gameplay Preview</h1>
@@ -20,10 +23,13 @@ Record. Replay. Cooperate. Escape.
 
 <h1 align="center">👥 Team Members</h1>
 
-<figure style="text-align: center;">
-  <img src="./DevLog/Week01/img/Group_Picture01.jpg" alt="diagram">
-  <figcaption></figcaption>
-</figure>
+<div align="center">
+  <img src="./DevLog/Week01/img/Group_Picture01.jpg" width="600">
+  <br>
+  <b></b>
+  <br>
+  <br>
+</div>
 
 <table align="center">
   <tr>
@@ -244,10 +250,13 @@ We attended each lab and testing marathon, gathering advice and feedback from di
 
 ### **1 Top Level Architecture**:
 
-<figure style="text-align: center;">
-  <img src="./assets/uml/top-level-architecture.png" alt="diagram" width="600">
-  <figcaption>Figure 1</figcaption>
-</figure>
+<div align="center">
+  <img src="./assets/uml/top-level-architecture.png" width="600">
+  <br>
+  <b></b>
+  <br>
+  <br>
+</div>
 
 This class diagram illustrates four core classes in the game and their collaboration: AppCoordinator, EventBus, SwitcherMain, and LevelManager, which are responsible for overall orchestration, event dispatching, page switching, and level management respectively.
 
