@@ -7,7 +7,7 @@ Record. Replay. Cooperate. Escape.
 
 <div align="center">
   <a href="https://uob-comsm0166.github.io/2026-group-13/Demo1">
-    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png" width="600">
+    <img src="./assets/Firefly_在游戏海报上加一个按钮，文字是PLAY，要醒目，要好辨识，而且按钮的风格要和背景统一，风格关键词：像素，霓虹紫，废土.png" width="800">
     <br>
     <b></b>
     <br>
@@ -260,10 +260,13 @@ We attended each lab and testing marathon, gathering advice and feedback from di
 
 This class diagram illustrates four core classes in the game and their collaboration: AppCoordinator, EventBus, SwitcherMain, and LevelManager, which are responsible for overall orchestration, event dispatching, page switching, and level management respectively.
 
-<figure style="text-align: center;">
-  <img src="./assets/sequence-diagrams/setup.png" alt="diagram" width="800">
-  <figcaption>Figure 2</figcaption>
-</figure>
+<div align="center">
+  <img src="./assets/uml/top-level-architecture.png" width="800">
+  <br>
+  <b></b>
+  <br>
+  <br>
+</div>
 
 The sequence diagram shows the initialization order of these four core classes during game startup. 
 
