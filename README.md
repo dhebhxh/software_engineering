@@ -251,24 +251,24 @@ We attended each lab and testing marathon, gathering advice and feedback from di
 ### **1 Top Level Architecture**:
 
 <div align="center">
-  <img src="./assets/uml/top-level-architecture.png" width="600">
   <br>
-  <b></b>
-  <br>
-  <br>
-</div>
-
-This class diagram illustrates four core classes in the game and their collaboration: AppCoordinator, EventBus, SwitcherMain, and LevelManager, which are responsible for overall orchestration, event dispatching, page switching, and level management respectively.
-
-<div align="center">
   <img src="./assets/uml/top-level-architecture.png" width="800">
   <br>
-  <b></b>
-  <br>
+  <b>Figure X: Class diagram of the main game architecture</b>
   <br>
 </div>
 
-The sequence diagram shows the initialization order of these four core classes during game startup. 
+&emsp;&emsp;This class diagram illustrates the four core classes in the game—AppCoordinator, EventBus, SwitcherMain, and LevelManager—and summarizes their responsibilities in orchestration, event dispatching, page switching, and level management.
+
+<div align="center">
+  <br>
+  <img src="./assets/sequence-diagrams/setup.png" width="800">
+  <br>
+  <b>Figure X: Sequence diagram of the initialization process</b>
+  <br>
+</div>
+
+&emsp;&emsp;This sequence diagram shows the initialization order among Player, p5, Assets, AppCoordinator, EventBus, SwitcherMain, and LevelManager during game startup.
 
 #### **1.2 Level Manager**:
 
