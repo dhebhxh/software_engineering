@@ -174,7 +174,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 - [5 Use-Case Diagram](#5-use-case-diagram)
 - [6 Requirements Definition](#6-requirements-definition)
 
----
+
 
 ### **1 Ideation process**:
 &emsp;&emsp;During the first stage of our game design, the first problem that came to us was which type of games we should choose. Each member of our group did detailed research about the specific game type he or she wanted to design, and finally carried out six ideas(each member with one idea). Then our group arranged a meeting and played all the games that could serve as prototypes for our game. The original ideas include Roguelike, Tower Defense, Simulation, PvP, puzzle-solving, etc. And after several hours of discussion, we finally decided to design a 2D platform puzzle-adventure game.
@@ -287,7 +287,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
   - [3.1 Record System](#31-record-system)
   - [3.2 Environmental Mechanisms](#32-environmental-mechanisms)
 
----
+
 
 ### **1 Top Level Architecture**:
 
@@ -535,7 +535,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 - [Technical Challenge 1](#technical-challenge-1)
 - [Technical Challenge 2](#technical-challenge-2)
 
----
+
 
 &emsp;&emsp;*U Help U* is developed using the p5.js library and follows an object-oriented, modular design approach. Our system architecture encapsulates core game components into distinct classes, including the main player, time-clones, a custom physics engine, and a collision detection system. To deliver the core experience of "collaborating with your past self," we had to overcome several significant technical hurdles during development. Specifically, we highlight the following two primary technical challenges:
 
@@ -567,7 +567,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
   - [2.1 Evaluation Findings](#21-evaluation-findings)
   - [2.2 Reconsidered Technical Challenges](#22-reconsidered-technical-challenges)
 
----
+
 
 ### **1 Qualitative**:
 
@@ -619,7 +619,7 @@ A Past Self is generated and replays the recorded actions using real‑time phys
 - [4 Challenges Encountered and Adjustments](#4-challenges-encountered-and-adjustments)
 - [5 Others’ thoughts](#5-others-thoughts)
 
----
+
 
 ### **1 The Tools and The Specific Cooperation Methods We Used**:
 
